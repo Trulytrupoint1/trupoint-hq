@@ -184,7 +184,7 @@ function ClipCard({ clip, priority = false }: { clip: Clip; priority?: boolean }
             </span>
           )}
           <span className="text-[11px] text-[var(--tp-text-disabled)] shrink-0 ml-auto">
-            {fmtTimeAgo(clip.publishedAt)}
+            {clip.publishedAt ? fmtTimeAgo(clip.publishedAt) : "Today"}
           </span>
         </div>
       </div>
@@ -281,7 +281,7 @@ function FeaturedClipCard({ clip }: { clip: Clip }) {
             </span>
           )}
           <span className="text-[11px] text-[var(--tp-text-disabled)] ml-auto">
-            {fmtTimeAgo(clip.publishedAt)}
+            {clip.publishedAt ? fmtTimeAgo(clip.publishedAt) : "Today"}
           </span>
         </div>
       </div>
@@ -750,3 +750,4 @@ export default function ClipsPage() {
     </div>
   )
 }
+
