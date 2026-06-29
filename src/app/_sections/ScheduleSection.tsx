@@ -144,7 +144,7 @@ export function ScheduleSection({ schedule }: ScheduleSectionProps) {
                       isToday ? 'text-white' : 'text-[var(--tp-text-primary)]',
                     )}
                   >
-                    {entry.title}
+                    {(entry as any).title ?? ""}
                   </p>
                   {entry.game && (
                     <p className="text-[12px] text-[var(--tp-purple-300)] mt-0.5">{entry.game}</p>
@@ -175,4 +175,5 @@ export function ScheduleSection({ schedule }: ScheduleSectionProps) {
     </section>
   )
 }
+
 
