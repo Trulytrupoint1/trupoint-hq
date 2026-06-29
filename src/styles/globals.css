@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'BreakBrush';
+  src: url('/fonts/BreakBrush.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Force BreakBrush on hero headline - overrides next/font */
+h1.hero-headline,
+h1.hero-headline * {
+  font-family: 'BreakBrush', sans-serif !important;
+}
+
+:root {
+  --tp-purple-primary: #7C3AED;
+  --tp-purple-500: #5B33C4;
+  --tp-purple-400: #9B6CF0;
+  --tp-purple-accent: #A78BFA;
+  --tp-purple-300: #C4B5FD;
+  --tp-purple-800: #1E1247;
+  --tp-bg-void: #060412;
+  --tp-bg-base: #0D0820;
+  --tp-bg-raised: #130D2E;
+  --tp-bg-float: #1A1040;
+  --tp-bg-overlay: #221452;
+  --tp-text-primary: #FFFFFF;
+  --tp-text-secondary: #C4B5FD;
+  --tp-text-tertiary: #7C6FAD;
+  --tp-text-muted: #7C6FAD;
+  --tp-text-disabled: #352B5A;
+  --tp-border-subtle: rgba(124,58,237,0.12);
+  --tp-border-default: rgba(124,58,237,0.25);
+  --tp-border-strong: rgba(124,58,237,0.45);
+  --tp-border-white: rgba(255,255,255,0.06);
+  --tp-border-white-md: rgba(255,255,255,0.12);
+  --tp-live-red: #EF4444;
+  --tp-discord-blue: #5865F2;
+  --tp-green: #10B981;
+  --tp-glow-sm: 0 0 12px rgba(124,58,237,0.35);
+  --tp-glow-md: 0 0 24px rgba(124,58,237,0.45);
+  --tp-glow-lg: 0 0 48px rgba(124,58,237,0.55);
+  --tp-font-display: 'Barlow Condensed', sans-serif;
+  --tp-font-body: 'Inter', sans-serif;
+  --tp-radius-md: 8px;
+  --tp-radius-lg: 12px;
+  --tp-radius-xl: 16px;
+  --tp-z-sticky: 200;
+  --tp-z-overlay: 300;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--tp-bg-base); color: var(--tp-text-primary); font-family: var(--tp-font-body); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+::selection { background: rgba(124,58,237,0.35); color: white; }
