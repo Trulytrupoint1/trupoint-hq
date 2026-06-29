@@ -140,7 +140,7 @@ function ClipCardItem({ clip }: { clip: Clip }) {
             </span>
           )}
           <span className="text-[11px] text-[var(--tp-text-disabled)] ml-auto">
-            {formatTimeAgo(clip.publishedAt)}
+            {clip.publishedAt ? formatTimeAgo(clip.publishedAt) : ""}
           </span>
         </div>
       </div>
@@ -278,3 +278,4 @@ export function ClipsSection({ clips }: ClipsSectionProps) {
     </section>
   )
 }
+
