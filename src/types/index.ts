@@ -145,3 +145,9 @@ export interface AnimationConfig {
   once?: boolean
   disabled?: boolean
 }
+
+export interface SocialLink {
+  platform: Platform;
+  url: string;
+  label: string;
+}
