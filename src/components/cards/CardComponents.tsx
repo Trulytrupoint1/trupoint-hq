@@ -9,7 +9,22 @@ import * as React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { cn } from '@/lib/cn'
-import { formatViewCount, PLATFORM_META } from '@/types'
+// ─── Local utilities (not exported from @/types — they are view-layer helpers) ─
+function formatViewCount(n: number): string {
+  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`
+  if (n >= 1_000)     return `${(n / 1_000).toFixed(1)}K`
+  return n.toString()
+}
+
+const PLATFORM_META: Record<string, { label: string; color: string }> = {
+  twitch:    { label: 'Twitch',    color: '#9146FF' },
+  youtube:   { label: 'YouTube',   color: '#FF0000' },
+  kick:      { label: 'Kick',      color: '#53FC18' },
+  tiktok:    { label: 'TikTok',    color: '#FF0050' },
+  discord:   { label: 'Discord',   color: '#5865F2' },
+  instagram: { label: 'Instagram', color: '#E1306C' },
+  x:         { label: 'X',         color: '#FFFFFF' },
+}
 import type { Clip, SocialLink, Game, CrewMember } from '@/types'
 
 // ── Social platform SVG icons ─────────────────────────────────────
