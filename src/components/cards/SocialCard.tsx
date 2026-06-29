@@ -16,7 +16,7 @@ import type { Platform } from '@/types'
 const platformConfig: Record<Platform, {
   label: string
   color: string
-  Icon: () => JSX.Element
+  Icon: () => React.ReactNode
 }> = {
   twitch: {
     label: 'Twitch',
@@ -146,3 +146,5 @@ export function SocialCard({ platform, handle, contentType, url, followerCount, 
     </a>
   )
 }
+
+

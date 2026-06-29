@@ -160,6 +160,7 @@ interface StatNumberProps {
 }
 
 const STAT_SIZES: Record<ComponentSize, { num: string; label: string }> = {
+  xs: { num: 'text-xl', label: 'text-xs' },
   sm: { num: 'text-2xl',   label: 'text-[9px]' },
   md: { num: 'text-3xl',   label: 'text-[10px]' },
   lg: { num: 'text-[2.75rem]', label: 'text-[10px]' },
@@ -277,3 +278,4 @@ function BodyCopy({
 }
 
 export { SectionHeader, HeroHeading, StatNumber, Label, BodyCopy }
+

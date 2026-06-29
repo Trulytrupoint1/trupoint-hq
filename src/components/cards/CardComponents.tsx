@@ -100,7 +100,7 @@ function ClipCard({ clip, className, priority = false }: ClipCardProps) {
       )}
     >
       <Link
-        href={clip.href}
+        href={clip.clipUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Watch ${clip.title} — ${formatViewCount(clip.viewCount)} views on ${clip.platform.toLowerCase()}`}
@@ -179,7 +179,7 @@ function ClipCard({ clip, className, priority = false }: ClipCardProps) {
           </h3>
           {clip.game && (
             <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--tp-purple-300)]">
-              {clip.game.name}
+              {(clip.game?.name || clip.game)}
             </span>
           )}
         </div>
@@ -232,7 +232,7 @@ function SocialCard({ social, className }: SocialCardProps) {
         style={{
           width: 52,
           height: 52,
-          background: meta.bgColor,
+          background: (meta as any).bgColor || meta.color,
         }}
         aria-hidden="true"
       >
@@ -445,3 +445,6 @@ function CrewCard({ member, size = 'md', showRole = true, className }: CrewCardP
 }
 
 export { ClipCard, SocialCard, GameCard, CrewCard, PlatformIcon }
+
+
+

@@ -142,7 +142,7 @@ interface LiveStatusCardProps {
 function LiveStatusCard({
   status,
   variant = 'sidebar',
-  platforms = ['TWITCH', 'KICK', 'YOUTUBE'],
+  platforms = ['twitch', 'kick', 'youtube'],
   className,
 }: LiveStatusCardProps) {
   const isCompact = variant === 'compact'
@@ -236,7 +236,7 @@ function LiveStatusCard({
                 'hover:border-[var(--tp-border-default)] hover:bg-[var(--tp-bg-float)]',
                 'focus-visible:outline-none focus-visible:ring-2',
                 'focus-visible:ring-[var(--tp-purple-400)]',
-                status.isLive && platform === 'TWITCH' && [
+                status.isLive && platform === 'twitch' && [
                   'bg-[rgba(145,70,255,0.12)] border-[rgba(145,70,255,0.25)]',
                   'hover:border-[rgba(145,70,255,0.5)]',
                 ]
@@ -245,7 +245,7 @@ function LiveStatusCard({
             >
               {PLATFORM_ICONS[platform]}
               <span>Watch on {platform.charAt(0) + platform.slice(1).toLowerCase()}</span>
-              {status.isLive && platform === (status.platform ?? 'TWITCH') && (
+              {status.isLive && platform === ((status.platform?.toLowerCase() as any) ?? 'twitch') && (
                 <span className="ml-auto">
                   <LiveDot isLive={true} size="sm" />
                 </span>
@@ -260,3 +260,5 @@ function LiveStatusCard({
 
 export { LiveDot, LiveBadge, LiveStatusCard }
 export type { LiveDotProps, LiveBadgeProps, LiveStatusCardProps }
+
+

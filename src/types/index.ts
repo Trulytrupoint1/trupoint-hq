@@ -1,11 +1,11 @@
 /**
- * TruPoint HQ — Shared Type Definitions
+ * TruPoint HQ � Shared Type Definitions
  * Every component imports from here. Never define types inline in components.
  */
 
 import type { ReactNode, ElementType, CSSProperties } from 'react'
 
-// ─── Platform Types ───────────────────────────────────────────────────────────
+// --- Platform Types ---------------------------------------------------------
 
 export type Platform =
   | 'twitch'
@@ -17,22 +17,26 @@ export type Platform =
   | 'discord'
 
 export type StreamPlatform = 'twitch' | 'youtube' | 'kick'
+export type SocialPlatform = Platform
 
-// ─── Size Tokens ──────────────────────────────────────────────────────────────
+// --- Size Tokens ------------------------------------------------------------
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export type SpacingSize = 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+export type ComponentSize = Size
 
-// ─── Direction ───────────────────────────────────────────────────────────────
+// --- Direction ---------------------------------------------------------------
 
 export type Direction = 'up' | 'down' | 'left' | 'right'
 export type Alignment = 'left' | 'center' | 'right'
 
-// ─── Color Variants ───────────────────────────────────────────────────────────
+// --- Color Variants ---------------------------------------------------------
 
 export type ColorVariant = 'purple' | 'white' | 'red' | 'green' | 'blue' | 'discord' | 'live'
+export type CardVariant = ColorVariant
+export type CardPadding = Size
 
-// ─── Live Status ─────────────────────────────────────────────────────────────
+// --- Live Status ------------------------------------------------------------
 
 export interface LiveStatus {
   isLive: boolean
@@ -42,6 +46,7 @@ export interface LiveStatus {
   thumbnailUrl?: string
   platforms: StreamPlatformLink[]
   startedAt?: string
+  platform?: string
 }
 
 export interface StreamPlatformLink {
@@ -50,12 +55,12 @@ export interface StreamPlatformLink {
   label: string
 }
 
-// ─── Content Types ────────────────────────────────────────────────────────────
+// --- Content Types ----------------------------------------------------------
 
 export interface Clip {
   id: string
   title: string
-  game: string
+  game: any
   viewCount: number
   thumbnailUrl: string
   clipUrl: string
@@ -104,14 +109,23 @@ export interface Stat {
   platform?: Platform
 }
 
-// ─── Component Utilities ──────────────────────────────────────────────────────
+export interface SocialLink {
+  platform: Platform
+  url: string
+  label: string
+  handle?: string
+  contentType?: string
+  followerCount?: string
+}
+
+// --- Component Utilities ----------------------------------------------------
 
 export interface WithClassName { className?: string }
 export interface WithChildren { children: ReactNode }
 export interface WithAs { as?: ElementType }
 export interface WithStyle { style?: CSSProperties }
 
-// ─── Navigation ───────────────────────────────────────────────────────────────
+// --- Navigation -------------------------------------------------------------
 
 export interface NavItem {
   label: string
@@ -125,7 +139,7 @@ export interface FooterColumn {
   links: NavItem[]
 }
 
-// ─── Toast ────────────────────────────────────────────────────────────────────
+// --- Toast ------------------------------------------------------------------
 
 export type ToastType = 'success' | 'error' | 'info' | 'warning'
 
@@ -137,17 +151,11 @@ export interface ToastPayload {
   action?: { label: string; onClick: () => void }
 }
 
-// ─── Animation ────────────────────────────────────────────────────────────────
+// --- Animation --------------------------------------------------------------
 
 export interface AnimationConfig {
   delay?: number
   duration?: number
   once?: boolean
   disabled?: boolean
-}
-
-export interface SocialLink {
-  platform: Platform;
-  url: string;
-  label: string;
 }

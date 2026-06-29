@@ -58,10 +58,10 @@ export {
 }                          from './utility/UtilityComponents'
 
 // ─── Animation ────────────────────────────────────────────────────
-export { Reveal }          from './animation/Reveal'
-export { Stagger }         from './animation/Stagger'
-export { FadeIn }          from './animation/FadeIn'
-export { Float }           from './animation/Float'
+// // export { Reveal }          from './animation/Reveal'
+// // export { Stagger }         from './animation/Stagger'
+// // export { FadeIn }          from './animation/FadeIn'
+// // export { Float }           from './animation/Float'
 export {
   Scale,
   Slide,
@@ -94,3 +94,5 @@ export {
   FooterLink,
   Dropdown,
 }                          from './navigation/NavigationComponents'
+
+

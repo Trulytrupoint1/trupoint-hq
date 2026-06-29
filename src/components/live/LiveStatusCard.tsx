@@ -128,7 +128,7 @@ export function LiveStatusCard({ status, compact = false, className }: LiveStatu
                 )}
                 aria-label={label}
               >
-                <config.Icon className="w-4 h-4" style={{ color: config.color }} />
+                <span style={{ color: config.color }}><config.Icon className="w-4 h-4" /></span>
                 <span>{label}</span>
                 <svg className="w-3 h-3 ml-auto opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                   <path d="m9 18 6-6-6-6"/>
@@ -141,3 +141,6 @@ export function LiveStatusCard({ status, compact = false, className }: LiveStatu
     </article>
   )
 }
+
+
+
