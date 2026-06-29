@@ -26,12 +26,12 @@ import type { Clip } from '@/types'
 // Replace with: const clips = await db.clips.findMany({ orderBy: { viewCount: 'desc' } })
 
 const ALL_CLIPS: Clip[] = [
- {
+  {
     id: '1',
-    title: "You Shot At Me So I Became The Bullet",
+    title: 'You Shot At Me So I Became The Bullet',
     game: 'War Thunder',
     viewCount: 0,
-    thumbnailUrl: '',
+    thumbnailUrl: 'https://img.youtube.com/vi/UTZw4zz9ZGQ/maxresdefault.jpg',
     clipUrl: 'https://youtube.com/shorts/UTZw4zz9ZGQ',
     platform: 'youtube',
     duration: '0:30',
@@ -39,6 +39,7 @@ const ALL_CLIPS: Clip[] = [
     featured: false,
   },
 ]
+
 // ─── HELPERS ──────────────────────────────────────────────────────
 
 function fmtViews(n: number): string {
@@ -184,7 +185,7 @@ function ClipCard({ clip, priority = false }: { clip: Clip; priority?: boolean }
             </span>
           )}
           <span className="text-[11px] text-[var(--tp-text-disabled)] shrink-0 ml-auto">
-            {clip.publishedAt ? fmtTimeAgo(clip.publishedAt) : "Today"}
+            {fmtTimeAgo(clip.publishedAt)}
           </span>
         </div>
       </div>
@@ -281,7 +282,7 @@ function FeaturedClipCard({ clip }: { clip: Clip }) {
             </span>
           )}
           <span className="text-[11px] text-[var(--tp-text-disabled)] ml-auto">
-            {clip.publishedAt ? fmtTimeAgo(clip.publishedAt) : "Today"}
+            {fmtTimeAgo(clip.publishedAt)}
           </span>
         </div>
       </div>
@@ -750,4 +751,3 @@ export default function ClipsPage() {
     </div>
   )
 }
-

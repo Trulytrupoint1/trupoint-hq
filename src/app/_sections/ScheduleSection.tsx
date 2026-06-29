@@ -96,7 +96,7 @@ export function ScheduleSection({ schedule }: ScheduleSectionProps) {
                     ? 'bg-[rgba(124,58,237,0.08)] border-[rgba(124,58,237,0.3)] shadow-[0_0_20px_rgba(124,58,237,0.1)]'
                     : 'bg-[var(--tp-bg-raised)] border-[var(--tp-border-subtle)] hover:border-[var(--tp-border-default)]',
                 )}
-                aria-label={`${DAY_NAMES[entry.dayOfWeek]}: ${(entry as any).title ?? ""}${isToday ? ' — Tonight!' : ''}`}
+                aria-label={`${DAY_NAMES[entry.dayOfWeek]}: ${entry.title}${isToday ? ' — Tonight!' : ''}`}
               >
                 {/* Day column */}
                 <div className="flex items-center gap-4 min-w-[160px]">
@@ -144,7 +144,7 @@ export function ScheduleSection({ schedule }: ScheduleSectionProps) {
                       isToday ? 'text-white' : 'text-[var(--tp-text-primary)]',
                     )}
                   >
-                    {(entry as any).title ?? ""}
+                    {entry.title}
                   </p>
                   {entry.game && (
                     <p className="text-[12px] text-[var(--tp-purple-300)] mt-0.5">{entry.game}</p>
@@ -175,5 +175,3 @@ export function ScheduleSection({ schedule }: ScheduleSectionProps) {
     </section>
   )
 }
-
-

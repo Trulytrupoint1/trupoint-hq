@@ -55,13 +55,13 @@ export interface StreamPlatformLink {
 export interface Clip {
   id: string
   title: string
-  game?: string
+  game: string
   viewCount: number
   thumbnailUrl: string
   clipUrl: string
   platform: StreamPlatform
   duration?: string
-  publishedAt?: string
+  publishedAt: string
   featured?: boolean
 }
 
@@ -90,8 +90,9 @@ export interface ScheduleEntry {
   id: string
   dayOfWeek: number
   startTime: string
+  title: string
   duration?: number
-  game?: string
+  game: string
   platforms: StreamPlatform[]
   isActive: boolean
   note?: string
