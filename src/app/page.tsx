@@ -82,32 +82,34 @@ const GAMES: Game[] = [
 
 const CREW: CrewMember[] = [
   {
-    id: '1',
-    name: 'Truly',
-    handle: '@TrulyTruPoint',
-    role: 'The Streamer',
-    characterUrl: '',
-    nameColor: '#a78bfa',
-    isStreamer: true,
-    order: 1,
-  },
-  {
     id: '2',
     name: 'JDeezy',
     handle: '@JDeezy',
     role: 'The Gamer',
-    characterUrl: '',
-    nameColor: '#60a5fa',
+    characterUrl: '/crew-jdeezy.png',
+    nameColor: '#D97706',
     isStreamer: true,
+    socialUrl: 'https://twitch.tv/jdeezy',
+    order: 1,
+  },
+  {
+    id: '1',
+    name: 'Truly',
+    handle: '@TrulyTruPoint',
+    role: 'The Streamer',
+    characterUrl: '/crew-truly.png',
+    nameColor: '#a78bfa',
+    isStreamer: true,
+    socialUrl: 'https://twitch.tv/trulytrupoint',
     order: 2,
   },
   {
     id: '3',
     name: 'Greg',
-    handle: '',
+    handle: '@I_am_ole_greg',
     role: 'The Hype Man',
-    characterUrl: '',
-    nameColor: '#fbbf24',
+    characterUrl: '/crew-greg.png',
+    nameColor: '#10B981',
     isStreamer: false,
     order: 3,
   },
@@ -143,4 +145,3 @@ export default function HomePage() {
     </>
   )
 }
-
