@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Home Page — TruPoint HQ
  * Foundation Step 4
  *
@@ -122,16 +122,38 @@ const SCHEDULE: ScheduleEntry[] = [
   { id: '4', dayOfWeek: 6, startTime: '18:00', title: 'Weekend Chaos', game: 'TBD w/ Crew', platforms: ['twitch', 'youtube', 'kick'], isActive: true, note: 'JDeezy & Greg join' },
 ]
 
-const STATS: Stat[] = [
-  { value: '12.4K', label: 'Twitch Followers', platform: 'twitch' },
-  { value: '8.2K',  label: 'YouTube Subs',     platform: 'youtube' },
-  { value: '15.1K', label: 'TikTok Followers', platform: 'tiktok' },
-  { value: '156',   label: 'Discord Members',  platform: 'discord' },
-]
+async function getDiscordStats(): Promise<number | null> {
+  try {
+    const res = await fetch(
+      'https://discord.com/api/v10/invites/rY9ZUEpCFK?with_counts=true',
+      { next: { revalidate: 300 } }
+    )
+    if (!res.ok) return null
+    const data = await res.json()
+    return typeof data.approximate_member_count === 'number'
+      ? data.approximate_member_count
+      : null
+  } catch {
+    return null
+  }
+}
 
 // ─── Page ─────────────────────────────────────────────────────────
 
-export default function HomePage() {
+export default async function HomePage() {
+  const discordMembers = await getDiscordStats()
+
+  const stats: Stat[] = [
+    { value: '12.4K', label: 'Twitch Followers', platform: 'twitch' },
+    { value: '8.2K',  label: 'YouTube Subs',     platform: 'youtube' },
+    { value: '15.1K', label: 'TikTok Followers', platform: 'tiktok' },
+    {
+      value: discordMembers !== null ? String(discordMembers) : '\u2014',
+      label: 'Discord Members',
+      platform: 'discord',
+    },
+  ]
+
   return (
     <>
       <HeroSection liveStatus={LIVE_STATUS} />
@@ -140,7 +162,7 @@ export default function HomePage() {
       <VoteSection games={GAMES} />
       <ScheduleSection schedule={SCHEDULE} />
       <CrewSection crew={CREW} />
-      <StatsSection stats={STATS} />
+      <StatsSection stats={stats} />
       <DiscordSection />
     </>
   )
