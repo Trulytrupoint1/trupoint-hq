@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ClipsSection — Latest clips horizontal carousel
  *
  * Desktop: 3 visible cards, left/right arrow navigation, drag to scroll
@@ -174,9 +174,15 @@ export function ClipsSection({ clips }: ClipsSectionProps) {
 
   return (
     <section
-      className="w-full bg-[var(--tp-bg-base)] py-16 md:py-20 overflow-hidden"
+      className="relative w-full py-16 md:py-20 overflow-hidden"
       id="clips"
       aria-label="Latest clips"
+      style={{
+        backgroundImage:
+          `linear-gradient(180deg, rgba(5,3,15,0.85) 0%, rgba(5,3,15,0.95) 100%), url('/clips-bg.webp')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
       <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
 
