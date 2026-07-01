@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 /**
  * Header — TruPoint HQ Site Navigation
@@ -33,6 +33,8 @@ const NAV_ITEMS = [
   { label: 'Live',      href: '/live' },
   { label: 'Clips',     href: '/clips' },
   { label: 'Schedule',  href: '/schedule' },
+  { label: 'Crew',      href: '/#crew' },
+  { label: 'Merch',     href: '/merch' },
   { label: 'About',     href: '/about' },
 ] as const
 
