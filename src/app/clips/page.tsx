@@ -528,7 +528,7 @@ function ClipOfStreamSection() {
 
             <div className="flex flex-col gap-3 w-full max-w-[240px]">
               <a
-                href="https://discord.gg/trupointhq"
+                href="https://discord.gg/rY9ZUEpCFK"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
@@ -751,4 +751,3 @@ export default function ClipsPage() {
     </div>
   )
 }
-

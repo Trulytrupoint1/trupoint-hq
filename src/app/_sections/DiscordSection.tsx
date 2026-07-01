@@ -121,7 +121,7 @@ export function DiscordSection() {
 
         {/* CTA */}
         <a
-          href="https://discord.gg/trupointhq"
+          href="https://discord.gg/rY9ZUEpCFK"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(

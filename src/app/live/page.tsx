@@ -43,9 +43,15 @@ const NEXT_STREAM = {
 }
 
 const RECENT_CLIPS = [
-  { id:'1', title:"Bro actually thought he could 1v4 me 💀", game:'Only Climb', views:24800, dur:'0:47', bg:['#1a1040','#0d0820'] },
-  { id:'3', title:'JDeezy said "I got this" and proceeded to lose everything', game:'NBA 2K26', views:31400, dur:'2:08', bg:['#1a1533','#0a0820'] },
-  { id:'5', title:"The most clutch moment in TruPoint HQ history", game:'Elden Ring', views:42100, dur:'1:55', bg:['#0f1a1a','#081510'] },
+  {
+    id: '1',
+    title: 'You Shot At Me So I Became The Bullet',
+    game: 'War Thunder',
+    views: 0,
+    dur: '0:30',
+    href: 'https://youtube.com/shorts/UTZw4zz9ZGQ',
+    thumb: 'https://img.youtube.com/vi/UTZw4zz9ZGQ/maxresdefault.jpg',
+  },
 ]
 
 // ─── HELPERS ──────────────────────────────────────────────────────
@@ -235,7 +241,7 @@ function LiveState() {
               See something clip-worthy? Submit your best moment to win the $20 prize.
             </p>
             <a
-              href="https://discord.gg/trupointhq"
+              href="https://discord.gg/rY9ZUEpCFK"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
@@ -379,8 +385,9 @@ function OfflineState() {
           {RECENT_CLIPS.map(clip => (
             <a
               key={clip.id}
-              href="#"
-              onClick={e => e.preventDefault()}
+              href={clip.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 'group block rounded-[var(--tp-radius-xl)] overflow-hidden',
                 'bg-[var(--tp-bg-raised)] border border-[var(--tp-border-subtle)]',
@@ -390,11 +397,17 @@ function OfflineState() {
               aria-label={`Watch ${clip.title}`}
             >
               <div
-                className="relative aspect-video flex items-center justify-center"
-                style={{ background: `linear-gradient(135deg, ${clip.bg[0]}, ${clip.bg[1]})` }}
+                className="relative aspect-video flex items-center justify-center overflow-hidden bg-[var(--tp-bg-overlay)]"
                 aria-hidden="true"
               >
-                <div className="w-10 h-10 rounded-full bg-[var(--tp-purple-500)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200 shadow-[0_0_20px_rgba(124,58,237,0.7)]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={clip.thumb}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                <div className="relative w-10 h-10 rounded-full bg-[var(--tp-purple-500)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200 shadow-[0_0_20px_rgba(124,58,237,0.7)]">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
                 </div>
                 <div className="absolute bottom-2 right-2 px-1.5 py-0.5 bg-black/80 text-white text-[10px] font-bold rounded">{clip.dur}</div>

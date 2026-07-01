@@ -25,7 +25,7 @@ const DEFAULTS: Settings = {
   streamTitle:     '',
   viewerCount:     0,
   prizeAmount:     20,
-  discordInvite:   'https://discord.gg/trupointhq',
+  discordInvite:   'https://discord.gg/rY9ZUEpCFK',
   twitchChannel:   'https://twitch.tv/trulytrupoint',
   youtubeChannel:  'https://youtube.com/@trulytrupoint',
   kickChannel:     'https://kick.com/trulytrupoint',

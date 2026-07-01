@@ -1,5 +1,3 @@
-'use client'
-
 /**
  * Footer — TruPoint HQ
  * Foundation Step 3
@@ -26,7 +24,7 @@ const FOOTER_COLUMNS = [
       { label: 'Live',     href: '/live' },
       { label: 'Clips',    href: '/clips' },
       { label: 'Schedule', href: '/schedule' },
-      { label: 'Crew',     href: '/crew' },
+      { label: 'Crew',     href: '/#crew' },
       { label: 'About',    href: '/about' },
     ],
   },
@@ -34,7 +32,7 @@ const FOOTER_COLUMNS = [
     heading: 'Community',
     links: [
       { label: 'Join the Team',   href: '/about#join' },
-      { label: 'Discord Server',  href: 'https://discord.gg/trupointhq', external: true },
+      { label: 'Discord Server',  href: 'https://discord.gg/rY9ZUEpCFK', external: true },
       { label: 'Clip of the Stream', href: '/clips#submit' },
       { label: 'Game Vote',       href: '/#vote' },
       { label: 'TruPoint Rules',  href: '/about#rules' },
@@ -91,7 +89,7 @@ const SOCIAL_LINKS = [
   },
   {
     platform: 'Discord',
-    href: 'https://discord.gg/trupointhq',
+    href: 'https://discord.gg/rY9ZUEpCFK',
     Icon: () => (
       <svg width="18" height="14" viewBox="0 0 71 55" fill="currentColor" aria-hidden="true">
         <path d="M60.1 4.9A58.6 58.6 0 0 0 45.7.7a.2.2 0 0 0-.3.1 40.9 40.9 0 0 0-1.8 3.7 54.1 54.1 0 0 0-16.2 0A37.5 37.5 0 0 0 25.6.8a.2.2 0 0 0-.3-.1A58.5 58.5 0 0 0 10.9 4.9a.2.2 0 0 0-.1.1C1.6 18.2-.9 31 .3 43.7a.2.2 0 0 0 .1.2 58.9 58.9 0 0 0 17.7 9 .2.2 0 0 0 .3-.1 42 42 0 0 0 3.6-5.9.2.2 0 0 0-.1-.3 38.7 38.7 0 0 1-5.5-2.6.2.2 0 0 1 0-.4l1.1-.8a.2.2 0 0 1 .2 0c11.6 5.3 24.1 5.3 35.5 0a.2.2 0 0 1 .2 0l1.1.8a.2.2 0 0 1 0 .4 36.3 36.3 0 0 1-5.5 2.6.2.2 0 0 0-.1.3 47.1 47.1 0 0 0 3.6 5.9.2.2 0 0 0 .3.1 58.7 58.7 0 0 0 17.8-9 .2.2 0 0 0 .1-.2C72.9 29.3 69.2 16.5 60.2 5ZM23.7 36.3c-3.5 0-6.4-3.2-6.4-7.1s2.8-7.1 6.4-7.1 6.5 3.2 6.4 7.1c0 4-2.8 7.1-6.4 7.1Zm23.7 0c-3.5 0-6.4-3.2-6.4-7.1s2.8-7.1 6.4-7.1 6.5 3.2 6.4 7.1c0 4-2.8 7.1-6.4 7.1Z" />
@@ -114,26 +112,22 @@ function FooterLogo() {
       aria-label="TruPoint HQ — Back to top"
     >
       <div
-        className="w-9 h-9 rounded-lg flex items-center justify-center bg-[var(--tp-purple-500)] shadow-[0_0_16px_rgba(124,58,237,0.4)] shrink-0"
+        className="w-9 h-9 flex items-center justify-center shrink-0"
         aria-hidden="true"
       >
-        <span
-          className="text-white font-black italic text-[17px] leading-none"
-          style={{ fontFamily: 'var(--tp-font-display)' }}
-        >
-          T
-        </span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/tp-logo.png"
+          alt="TruPoint HQ"
+          style={{ width: '36px', height: '36px', objectFit: 'contain' }}
+        />
       </div>
       <div className="leading-none" aria-hidden="true">
         <span
           className="text-white font-black italic text-[18px] tracking-tight block"
           style={{ fontFamily: 'var(--tp-font-display)' }}
         >
-          TRULY
-          <span className="text-[var(--tp-purple-400)]">TRUPOINT</span>
-        </span>
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--tp-text-muted)]">
-          TruPoint HQ
+          TRUPOINT<span className="text-[var(--tp-purple-300)]"> HQ</span>
         </span>
       </div>
     </Link>

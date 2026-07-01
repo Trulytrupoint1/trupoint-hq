@@ -171,7 +171,7 @@ function LiveIndicator({ isLive, viewerCount, href = '/live' }: LiveIndicatorPro
 function DiscordCTA() {
   return (
     <a
-      href="https://discord.gg/trupointhq"
+      href="https://discord.gg/rY9ZUEpCFK"
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
@@ -426,7 +426,7 @@ function MobileMenu({ isOpen, pathname, isLive, onClose }: MobileMenuProps) {
         {/* Drawer footer — Discord CTA */}
         <div className="p-5 border-t border-[var(--tp-border-subtle)]">
           <a
-            href="https://discord.gg/trupointhq"
+            href="https://discord.gg/rY9ZUEpCFK"
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}

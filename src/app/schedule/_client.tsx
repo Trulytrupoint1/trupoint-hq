@@ -618,7 +618,7 @@ export function SchedulePageClient() {
             <p className="text-[13px] text-[var(--tp-text-tertiary)] leading-relaxed">
               These streams run every week at the same time. Schedule is subject to change — follow on Twitch or join the{' '}
               <a
-                href="https://discord.gg/trupointhq"
+                href="https://discord.gg/rY9ZUEpCFK"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--tp-purple-300)] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tp-purple-400)] rounded-sm"
