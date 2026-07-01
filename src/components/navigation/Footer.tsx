@@ -1,3 +1,5 @@
+'use client'
+
 /**
  * Footer — TruPoint HQ
  * Foundation Step 3
